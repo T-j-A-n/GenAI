@@ -1,4 +1,4 @@
-# SkillBridge
+# SkillBridge - Team 26
 
 # Linguistic integration
 We planned of using Bhashini API, to convert speech to text of hindi, telugu, kannada and marathi.<br>
