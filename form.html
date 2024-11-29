@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Form</title>
+
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- External Stylesheet -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+
+        .flash-messages ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .flash-messages li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Provide Your Details</h1>
+
+        <!-- Display Flash Messages -->
+        <div class="flash-messages">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <form method="POST">
+            <label for="disability">Disability Type:</label>
+            <input type="text" id="disability" name="disability" required><br><br>
+
+            <label for="languages">Languages Known (comma-separated):</label>
+            <input type="text" id="languages" name="languages" required><br><br>
+
+            <label for="vocational_skills">Vocational Skills:</label>
+            <input type="text" id="vocational_skills" name="vocational_skills" required><br><br>
+
+            <h3>Numeric Skills Test (Answer the following questions)</h3>
+            <label for="q1">1 + 1 = </label>
+            <input type="text" name="q1"><br>
+            <label for="q2">2 + 3 = </label>
+            <input type="text" name="q2"><br>
+            <label for="q3">5 + 4 = </label>
+            <input type="text" name="q3"><br>
+            <label for="q4">3 + 7 = </label>
+            <input type="text" name="q4"><br>
+            <label for="q5">6 + 6 = </label>
+            <input type="text" name="q5"><br>
+            <label for="q6">8 + 2 = </label>
+            <input type="text" name="q6"><br>
+            <label for="q7">9 + 1 = </label>
+            <input type="text" name="q7"><br>
+            <label for="q8">4 + 4 = </label>
+            <input type="text" name="q8"><br>
+            <label for="q9">10 - 5 = </label>
+            <input type="text" name="q9"><br>
+            <label for="q10">7 + 3 = </label>
+            <input type="text" name="q10"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
